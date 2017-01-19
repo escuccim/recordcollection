@@ -24,7 +24,7 @@ class CreateRecordsTable extends Migration
                 $table->text('notes')->nullable();
                 $table->string('discogs')->nullable();
                 $table->string('thumb')->nullable();
-                $table->int('discogs_results')->nullable();
+                $table->integer('discogs_results')->nullable();
                 $table->timestamps();
 
             });
