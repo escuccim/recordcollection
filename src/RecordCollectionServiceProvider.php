@@ -29,11 +29,15 @@ class RecordCollectionServiceProvider extends ServiceProvider
         // publish config if necessary
         $this->publishes([
             __DIR__.'/config/records.php' => config_path('records.php'),
-            __DIR__.'/database/migrations' => database_path('migrations')
+            __DIR__ . '/resources/views' => base_path('resources/views/vendor/escuccim'),
         ], 'config');
 
         $this->publishes([
-            __DIR__ . '/resources/views' => base_path('resources/views/vendor/escuccim')
+            __DIR__.'/database/migrations' => database_path('migrations'),
+        ], 'migrations');
+
+        $this->publishes([
+            __DIR__ . '/resources/views/pagination' => base_path('resources/views/vendor/pagination')
         ], 'views');
 
         // use the default configuration file as fallback
