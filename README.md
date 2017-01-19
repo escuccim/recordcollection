@@ -15,20 +15,40 @@ Via Composer
 $ composer require escuccim/recordcollection
 ```
 
-- Register service provider
-- Run migrations
-- Register middleware
+Register service provider in config/app.php:
+```php
+Escuccim\RecordCollection\RecordCollectionServiceProvider::class,
+```
+
+Run migrations to create the database table:
+```bash
+php artisan migrate
+```
+
+This uses a middleware to determine if the user is authorized to perform administrative tasks. You can use mine or create your own, the code references middleware 'admin', so unless there is a middleware with this name registered will throw errors. To use mine register it in app/Http/Kernel.php:
+```php
+'admin' => \App\Http\Middleware\AdminMiddleware::class,
+```
+
+If you wish to edit the files you can publish them, with:
+```bash
+php artisan vendor:publish
+```
+
+There are multiple groups of files to be published, which you can choose by adding --tags=[group] to the command:
+- config - publishes the config file to /config/records.php
+- migrations - publishes the database migrations to /database/migrations
+- lang - publishes the translation files to /resources/lang/vendor - currently I have files for English and French
+- views - publishes the views /resoures/vendor/views
+
+There are also custom pagination view files which are published by --tag=config which are used for the pagination of the record search interface. If the search and sort functions do not work you should copy these from the package to /resources/vendor/pagination.
 
 ## Usage
-This package contains its own routes, models, controllers and views so should run out of the box. I don't really expect anyone else to use it 
-other than me so am not going to make this too detailed. 
+This package contains its own routes, models, controllers and views so should run out of the box. I don't really expect anyone else to use it other than me so am not going to make this too detailed. 
 
-Once you have everything installed the route /records should take you to the list of records, where you can add or edit records. I do not have
-a delete function as I would never get rid of any of my records.
+Once you have everything installed the route /records should take you to the list of records, where you can add or edit records. I do not have a delete function as I would never get rid of any of my records.
 
-The HTML interface will display a link to discogs and a thumbnail from discogs if you have that info in the database table. If not I wrote scripts I
-used to pull the info from Discogs, but due to the large numbers of variations of many vinyl releases it usually needs a bit
-of hand-holding to populate usable data.
+The HTML interface will display a link to discogs and a thumbnail from discogs if you have that info in the database table. If not I wrote scripts I used to pull the info from Discogs, but due to the large numbers of variations of many vinyl releases it usually needs a bit of hand-holding to populate usable data.
 
 ## Change log
 
@@ -57,17 +77,17 @@ If you discover any security related issues, please email skooch@gmail.com inste
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/escuccim/RecordCollection.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/escuccim/recordcollection.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/escuccim/RecordCollection/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/escuccim/RecordCollection.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/escuccim/RecordCollection.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/escuccim/RecordCollection.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/escuccim/recordcollection.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/escuccim/RecordCollection
-[link-travis]: https://travis-ci.org/escuccim/RecordCollection
-[link-scrutinizer]: https://scrutinizer-ci.com/g/escuccim/RecordCollection/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/escuccim/RecordCollection
-[link-downloads]: https://packagist.org/packages/escuccim/RecordCollection
+[link-packagist]: https://packagist.org/packages/escuccim/recordcollection
+[link-travis]: https://travis-ci.org/escuccim/recordcollection
+[link-scrutinizer]: https://scrutinizer-ci.com/g/escuccim/recordcollection/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/escuccim/recordcollection
+[link-downloads]: https://packagist.org/packages/escuccim/recordcollection
 [link-author]: https://github.com/escuccim
 [link-contributors]: ../../contributors
