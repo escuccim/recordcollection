@@ -58,7 +58,7 @@ class RecordsController extends Controller
 	public function show($id) {
 		setLanguage();
 		$record = Record::findOrFail($id);
-		$title = trans('records.info') . ' - ' . $record->title;
+		$title = trans('record-lang::records.info') . ' - ' . $record->title;
 		return view('records::records.show', compact('record', 'title'));
 	}
 	
