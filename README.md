@@ -77,17 +77,17 @@ If you discover any security related issues, please email skooch@gmail.com inste
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/escuccim/RecordCollection.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/escuccim/recordcollection.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/escuccim/RecordCollection/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/escuccim/RecordCollection.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/escuccim/RecordCollection.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/escuccim/RecordCollection.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/escuccim/recordcollection.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/escuccim/RecordCollection
+[link-packagist]: https://packagist.org/packages/escuccim/recordcollection
 [link-travis]: https://travis-ci.org/escuccim/RecordCollection
 [link-scrutinizer]: https://scrutinizer-ci.com/g/escuccim/RecordCollection/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/escuccim/RecordCollection
-[link-downloads]: https://packagist.org/packages/escuccim/RecordCollection
+[link-downloads]: https://packagist.org/packages/escuccim/recordcollection
 [link-author]: https://github.com/escuccim
 [link-contributors]: ../../contributors
