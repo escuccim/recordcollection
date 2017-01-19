@@ -8,3 +8,7 @@ Route::group(['middleware' => ['web']], function() {
 Route::group(['middleware' => ['auth:api']], function() {
     Route::get('/api/records', 'RecordsController@api')->middleware('auth:api');
 });
+
+Route::group(['middleware' => ['auth:api']], function(){
+   Route::get('/api/records', 'RecordsController@api');
+});

@@ -29,7 +29,8 @@ class RecordCollectionServiceProvider extends ServiceProvider
         // publish config if necessary
         $this->publishes([
             __DIR__.'/config/records.php' => config_path('records.php'),
-            __DIR__.'/resources/views/pagination' => base_path('resources/views/vendor/pagination')
+            __DIR__.'/resources/views/pagination' => base_path('resources/views/vendor/pagination'),
+            __DIR__.'/assets/recordsearch.js' => base_path('public/js/recordsearch.js')
         ], 'config');
 
         $this->publishes([
