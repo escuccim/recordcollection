@@ -34,15 +34,13 @@ If you wish to edit the files you can publish them, with:
 ```bash
 php artisan vendor:publish
 ```
-**Note** - You must publish the config files for the search interface to work properly.
+**Note** - You must publish the config files for the search interface to work properly. There are some Javascript assets which need to be put into the public directory for the search interface to work, and it will also publish the Laravel pagination files have some slight modifications which are necessary for proper functioning of the page.
 
 There are multiple groups of files to be published, which you can choose by adding --tags=[group] to the command:
 - config - publishes the config file to /config/records.php
 - migrations - publishes the database migrations to /database/migrations
 - lang - publishes the translation files to /resources/lang/vendor - currently I have files for English and French
 - views - publishes the views /resoures/vendor/views
-
-There are also custom pagination view files which are published by --tag=config which are used for the pagination of the record search interface. If the search and sort functions do not work you should copy these from the package to /resources/vendor/pagination.
 
 ## Usage
 This package contains its own routes, models, controllers and views so should run out of the box. To enable the Javascript functions in the admin pages you need to add the following to your layouts/app.blade.php in the <header>:
