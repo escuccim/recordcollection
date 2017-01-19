@@ -35,7 +35,7 @@ If you wish to edit the files you can publish them, with:
 php artisan vendor:publish
 ```
 
-*Note* - You must publish the config files for the search interface to work properly.
+**Note** - You must publish the config files for the search interface to work properly.
 
 There are multiple groups of files to be published, which you can choose by adding --tags=[group] to the command:
 - config - publishes the config file to /config/records.php
