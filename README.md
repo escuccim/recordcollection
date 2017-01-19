@@ -3,42 +3,32 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```Eric Scuccimarra``` ```escuccim``` ```http://ericscuccimarra.com``` ```skooch@gmail.com``` ```escuccim``` ```RecordCollection``` ```A package to maintain a searchable database of vinyl records``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
-
+A Laravel package to maintain my database of vinyl records in my collection, with a searchable HTML interface and an API interface.
 
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require escuccim/RecordCollection
+$ composer require escuccim/recordcollection
 ```
+
+- Register service provider
+- Run migrations
+- Register middleware
 
 ## Usage
+This package contains its own routes, models, controllers and views so should run out of the box. I don't really expect anyone else to use it 
+other than me so am not going to make this too detailed. 
 
-``` php
-$skeleton = new Escuccim\RecordCollection();
-echo $skeleton->echoPhrase('Hello, League!');
-```
+Once you have everything installed the route /records should take you to the list of records, where you can add or edit records. I do not have
+a delete function as I would never get rid of any of my records.
+
+The HTML interface will display a link to discogs and a thumbnail from discogs if you have that info in the database table. If not I wrote scripts I
+used to pull the info from Discogs, but due to the large numbers of variations of many vinyl releases it usually needs a bit
+of hand-holding to populate usable data.
 
 ## Change log
 
