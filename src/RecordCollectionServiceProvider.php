@@ -31,7 +31,7 @@ class RecordCollectionServiceProvider extends ServiceProvider
             __DIR__.'/config/records.php' => config_path('records.php'),
             __DIR__.'/resources/views/pagination' => base_path('resources/views/vendor/pagination'),
             __DIR__.'/assets/recordsearch.js' => base_path('public/js/recordsearch.js'),
-            __DIR__.'/fonts' => base_path('public/fonts')
+            __DIR__.'/assets/fonts' => base_path('public/fonts')
         ], 'config');
 
         $this->publishes([
