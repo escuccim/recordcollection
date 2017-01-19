@@ -5,7 +5,7 @@ namespace Escuccim\RecordCollection\Http\Controllers;
 use Illuminate\Http\Request;
 use Escuccim\RecordCollection\Models\Record;
 use Escuccim\RecordCollection\Models\RecordSearch;
-use App\Http\Requests\RecordRequest;
+use Escuccim\RecordCollection\Http\Requests\RecordRequest;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use App\Http\Controllers\Controller;
 
