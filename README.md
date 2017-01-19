@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-!A Laravel package to maintain my database of vinyl records in my collection, with a searchable HTML interface and an API interface.
+A Laravel package to maintain my database of vinyl records in my collection, with a searchable HTML interface and an API interface.
 
 ## Install
 
