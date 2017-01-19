@@ -85,9 +85,9 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-downloads]: https://img.shields.io/packagist/dt/escuccim/recordcollection.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/escuccim/recordcollection
-[link-travis]: https://travis-ci.org/escuccim/RecordCollection
-[link-scrutinizer]: https://scrutinizer-ci.com/g/escuccim/RecordCollection/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/escuccim/RecordCollection
+[link-travis]: https://travis-ci.org/escuccim/recordcollection
+[link-scrutinizer]: https://scrutinizer-ci.com/g/escuccim/recordcollection/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/escuccim/recordcollection
 [link-downloads]: https://packagist.org/packages/escuccim/recordcollection
 [link-author]: https://github.com/escuccim
 [link-contributors]: ../../contributors
