@@ -65,26 +65,23 @@
 </div>
 </div>
 
-@section('footer')
-	<script src="/js/select2.min.js"></script>
-	<script>
-		$('#label').select2({
-			placeholder: 'Choose a label:',
-			allowClear: true,
-			tags: true,
-		});
-		new Vue({
-			el: '#app',
-			data: {
-				title: '',
-				artist: '',
-				label: '',
-			},
-		});
-		$('#tags').select2({
-			placeholder: 'Choose a tag:',
-			allowClear: true,
-			tags: true,
-		});
-	</script>
-@endsection
+<script>
+	$('#label').select2({
+		placeholder: 'Choose a label:',
+		allowClear: true,
+		tags: true,
+	});
+	new Vue({
+		el: '#app',
+		data: {
+			title: '',
+			artist: '',
+			label: '',
+		},
+	});
+	$('#tags').select2({
+		placeholder: 'Choose a tag:',
+		allowClear: true,
+		tags: true,
+	});
+</script>
