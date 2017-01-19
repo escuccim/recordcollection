@@ -7,10 +7,10 @@
 	</div>
 	<div class="panel-body">
 		
-		@include('errors.list')
+		@include('records::errors.list')
 		
 		{!! Form::open(['url' => 'records', 'class' => 'form-horizontal']) !!}
-			@include('records.recordForm', ['submitButtonText' => 'Add Record'])
+			@include('records::records.recordForm', ['submitButtonText' => 'Add Record'])
 		{!! Form::close() !!}
 	</div>	
 	

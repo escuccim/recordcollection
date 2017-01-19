@@ -4,22 +4,22 @@
 			<thead>
 				<tr>
 					<td></td><!--  -->
-					<th width="35%"><a id="artist" class="sortlink" data-val="artist">{{ trans('records.artist') }}</a>
+					<th width="35%"><a id="artist" class="sortlink" data-val="artist">{{ trans('record-lang::records.artist') }}</a>
 						@if($sort == 'artist')
 							<span class="caret"></span>
 						@endif
 					</th>
-					<th width="31%"><a id="title" class="sortlink" data-val="title" href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@index', ['sort=title', 'searchBy' => $recordSearch->formData['searchBy'], 'searchTerm' => $recordSearch->formData['searchTerm'], 'page' => $records->currentPage()]) }}">{{ trans('records.title') }}</a>
+					<th width="31%"><a id="title" class="sortlink" data-val="title" href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@index', ['sort=title', 'searchBy' => $recordSearch->formData['searchBy'], 'searchTerm' => $recordSearch->formData['searchTerm'], 'page' => $records->currentPage()]) }}">{{ trans('record-lang::records.title') }}</a>
 						@if($sort == 'title')
 							<span class="caret"></span>
 						@endif
 					</th>
-					<th width="24%"><a id="label" class="sortlink" data-val="label" href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@index', ['sort=labels.name', 'searchBy' => $recordSearch->formData['searchBy'], 'searchTerm' => $recordSearch->formData['searchTerm'], 'page' => $records->currentPage()]) }}">{{ trans('records.label') }}</a>
+					<th width="24%"><a id="label" class="sortlink" data-val="label" href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@index', ['sort=labels.name', 'searchBy' => $recordSearch->formData['searchBy'], 'searchTerm' => $recordSearch->formData['searchTerm'], 'page' => $records->currentPage()]) }}">{{ trans('record-lang::records.label') }}</a>
 						@if($sort == 'label')
 							<span class="caret"></span>
 							@endif
 					</th>
-					<th width="10%"><a id="catalog_no" class="sortlink" data-val="catalog_no" href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@index', ['sort=catalog_no', 'searchBy' => $recordSearch->formData['searchBy'], 'searchTerm' => $recordSearch->formData['searchTerm'], 'page' => $records->currentPage()]) }}">{{ trans('records.catno') }}</a>
+					<th width="10%"><a id="catalog_no" class="sortlink" data-val="catalog_no" href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@index', ['sort=catalog_no', 'searchBy' => $recordSearch->formData['searchBy'], 'searchTerm' => $recordSearch->formData['searchTerm'], 'page' => $records->currentPage()]) }}">{{ trans('record-lang::records.catno') }}</a>
 						@if($sort == 'catalog_no')
 							<span class="caret"></span>
 						@endif
@@ -39,7 +39,7 @@
 			@else
 				<tr>
 					<td></td>
-					<td colspan="4" align="center"><strong>{{ trans('records.norecordsfound') }}</strong></td>
+					<td colspan="4" align="center"><strong>{{ trans('record-lang::records.norecordsfound') }}</strong></td>
 				</tr>
 			@endif
 		</table>

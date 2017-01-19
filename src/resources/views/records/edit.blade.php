@@ -7,10 +7,10 @@
 	</div>
 	
 	<div class="panel-body">
-		@include('errors.list')
+		@include('records::errors.list')
 		
-		{!! Form::model($record, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['RecordsController@update', $record->id]]) !!}
-			@include('records.recordForm', ['submitButtonText' => 'Update Record'])
+		{!! Form::model($record, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['\Escuccim\RecordCollection\Http\Controllers\RecordsController@update', $record->id]]) !!}
+			@include('records::records.recordForm', ['submitButtonText' => 'Update Record'])
 		{!! Form::close() !!}
 	</div>	
 	

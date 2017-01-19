@@ -5,17 +5,17 @@
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h4>{{ trans('records.info') }}</h4>
+				<h4>{{ trans('record-lang::records.info') }}</h4>
 			</div>
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-md-9">
 						<div class="row">
-							<div class="col-md-3"><strong>{{ trans('records.artist') }}:</strong></div>
+							<div class="col-md-3"><strong>{{ trans('record-lang::records.artist') }}:</strong></div>
 							<div class="col-md-8">{{ $record->artist }}</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3"><strong>{{ trans('records.title') }}:</strong></div>
+							<div class="col-md-3"><strong>{{ trans('record-lang::records.title') }}:</strong></div>
 							<div class="col-md-8">{{ $record->title }}</div>
 						</div>
 						<div class="row">
@@ -23,12 +23,12 @@
 							<div class="col-md-8">{{ $record->label }}</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3"><strong>{{ trans('records.catalog_no') }}:</strong></div>
+							<div class="col-md-3"><strong>{{ trans('record-lang::records.catalog_no') }}:</strong></div>
 							<div class="col-md-8">{{ $record->catalog_no }}</div>
 						</div>
 						@if($record->discogs)
 							<div class="row">
-								<div class="col-md-3"><strong>{{ trans('records.link') }}:</strong></div>
+								<div class="col-md-3"><strong>{{ trans('record-lang::records.link') }}:</strong></div>
 								<div class="col-md-9"><a href="http://www.discogs.com/{{ $record->discogs }}">{{ $record->discogs }}</a></div>
 							</div>
 						@endif				

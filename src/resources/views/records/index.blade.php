@@ -14,25 +14,25 @@
 				{{ csrf_field() }}
 					<div class="form-group">
 						<div class="col-md-1"></div>
-						<label for="searchTerm" class="control-label col-md-1">{{ trans('records.search') }}</label>
+						<label for="searchTerm" class="control-label col-md-1">{{ trans('record-lang::records.search') }}</label>
 						<div class="col-md-2">
 							<input type="text" id="searchTerm" name="searchTerm" value="{{ $recordSearch->formData['searchTerm'] }}" class="form-control input-sm">
 						</div>
 						
-						<label for="searchBy" class="control-label col-md-2">{{ trans('records.searchby') }}</label>
+						<label for="searchBy" class="control-label col-md-2">{{ trans('record-lang::records.searchby') }}</label>
 						
 						<div class="col-md-2">
 							<select name="searchBy" id="searchBy" class="form-control input-sm">
-								<option value="all" {{ ($recordSearch->formData['searchBy'] == 'all') ? 'selected' : '' }}>{{ trans('records.all') }}
-								<option value="artist" {{ ($recordSearch->formData['searchBy'] == 'artist') ? 'selected' : '' }}>{{ trans('records.artist') }}
-								<option value="title" {{ ($recordSearch->formData['searchBy'] == 'title') ? 'selected' : '' }}>{{ trans('records.title') }}
+								<option value="all" {{ ($recordSearch->formData['searchBy'] == 'all') ? 'selected' : '' }}>{{ trans('record-lang::records.all') }}
+								<option value="artist" {{ ($recordSearch->formData['searchBy'] == 'artist') ? 'selected' : '' }}>{{ trans('record-lang::records.artist') }}
+								<option value="title" {{ ($recordSearch->formData['searchBy'] == 'title') ? 'selected' : '' }}>{{ trans('record-lang::records.title') }}
 								<option value="label" {{ ($recordSearch->formData['searchBy'] == 'label') ? 'selected' : '' }}>Label
-								<option value="catalog_no" {{ ($recordSearch->formData['searchBy'] == 'catalog_no') ? 'selected' : '' }}>{{ trans('records.catno') }}
+								<option value="catalog_no" {{ ($recordSearch->formData['searchBy'] == 'catalog_no') ? 'selected' : '' }}>{{ trans('record-lang::records.catno') }}
 							</select>
 						</div>
 						
 						<div class="col-md-4">
-							<input type="submit" name="search" id="search" value="{{ trans('records.submit') }}" class="btn btn-primary btn-sm">
+							<input type="submit" name="search" id="search" value="{{ trans('record-lang::records.submit') }}" class="btn btn-primary btn-sm">
 							@if(Auth::check())
 								@if(Auth::user()->type == 1)
 									<a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@create') }}" id="add" class="btn btn-primary btn-sm">Add Record</a>
@@ -58,7 +58,7 @@
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title"><span class="glyphicon glyphicon-time"></span> &nbsp; {{ trans('records.pleasewait') }}</h4>
+				<h4 class="modal-title"><span class="glyphicon glyphicon-time"></span> &nbsp; {{ trans('record-lang::records.pleasewait') }}</h4>
 			</div>
 			<div class="modal-body">
 				<div class="progress">
