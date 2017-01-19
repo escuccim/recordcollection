@@ -44,7 +44,10 @@ There are multiple groups of files to be published, which you can choose by addi
 There are also custom pagination view files which are published by --tag=config which are used for the pagination of the record search interface. If the search and sort functions do not work you should copy these from the package to /resources/vendor/pagination.
 
 ## Usage
-This package contains its own routes, models, controllers and views so should run out of the box. I don't really expect anyone else to use it other than me so am not going to make this too detailed. 
+This package contains its own routes, models, controllers and views so should run out of the box. To enable the Javascript functions in the admin pages you need to add the following to your layouts/app.blade.php in the <header>:
+```
+@yield('header')
+```
 
 Once you have everything installed the route /records should take you to the list of records, where you can add or edit records. I do not have a delete function as I would never get rid of any of my records.
 
