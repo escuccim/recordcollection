@@ -47,14 +47,12 @@
 						</div>
 					</div>
 
-					@if(Auth::check())
-						@if(Auth::user()->type == 1)
-							<div class="row">
-								<div class="col-md-2 col-md-offset-5">
-									<br><a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@edit', [$record->id]) }}" class="btn btn-primary">Edit Record</a>
-								</div>
+					@if(config('records.is_user_admin')())
+						<div class="row">
+							<div class="col-md-2 col-md-offset-5">
+								<br><a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@edit', [$record->id]) }}" class="btn btn-primary">Edit Record</a>
 							</div>
-						@endif
+						</div>
 					@endif
 				</div>
 			</div>

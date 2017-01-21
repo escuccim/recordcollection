@@ -34,10 +34,8 @@
 
 							<div class="col-md-4">
 								<input type="submit" name="search" id="search" value="{{ trans('record-lang::records.submit') }}" class="btn btn-primary btn-sm">
-								@if(Auth::check())
-									@if(Auth::user()->type == 1)
+								@if(config('records.is_user_admin')())
 										<a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@create') }}" id="add" class="btn btn-primary btn-sm">Add Record</a>
-									@endif
 								@endif
 							</div>
 						</div>

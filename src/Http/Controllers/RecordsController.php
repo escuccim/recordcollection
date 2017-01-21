@@ -15,7 +15,7 @@ class RecordsController extends Controller
 	 * Sets middleware permissions to only allow access to public viewable pages. Other pages require admin access.
 	 */
 	public function __construct() {
-		$this->middleware('admin')->except(['search', 'index', 'show', 'api']);
+		$this->middleware(config('records.admin_middleware'))->except(['search', 'index', 'show', 'api']);
 	}
 	
 	/** 
