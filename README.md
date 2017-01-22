@@ -47,7 +47,6 @@ This package contains its own routes, models, controllers and views so should ru
 ```
 @yield('header')
 ```
-
 Once you have everything installed the route /records should take you to the list of records, where you can add or edit records. I do not have a delete function as I would never get rid of any of my records.
 
 The HTML interface will display a link to discogs and a thumbnail from discogs if you have that info in the database table. If not I wrote scripts I used to pull the info from Discogs, but due to the large numbers of variations of many vinyl releases it usually needs a bit of hand-holding to populate usable data.
