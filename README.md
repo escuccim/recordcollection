@@ -43,7 +43,7 @@ There are multiple groups of files to be published, which you can choose by addi
 - views - publishes the views /resoures/vendor/views
 
 ## Usage
-This package contains its own routes, models, controllers and views so should run out of the box. To enable the Javascript functions in the admin pages you need to add the following to your layouts/app.blade.php in the <header>:
+This package contains its own routes, models, controllers and views so should run out of the box. To enable the Javascript functions in the admin pages you need to add the following to your layouts/app.blade.php in the header:
 ```
 @yield('header')
 ```
