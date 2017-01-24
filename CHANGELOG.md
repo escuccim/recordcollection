@@ -10,3 +10,6 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Added middleware to config file
 - Added name of function to tell if user is admin or not to config file
 - Changed code to point to config file instead of hardcoding in how to determine user permissions
+
+### Fixed
+- Removed call to setLanguage() function on every single request, replaced with my translate middleware, much simpler

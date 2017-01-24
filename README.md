@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-A Laravel package to maintain my database of vinyl records in my collection, with a searchable HTML interface and an API interface.
+A Laravel package to maintain my database of vinyl records in my collection, with a searchable HTML interface and an API interface. Currently has English and French language, easily expandable with additional languages.
 
 ## Install
 
@@ -43,11 +43,10 @@ There are multiple groups of files to be published, which you can choose by addi
 - views - publishes the views /resoures/vendor/views
 
 ## Usage
-This package contains its own routes, models, controllers and views so should run out of the box. To enable the Javascript functions in the admin pages you need to add the following to your layouts/app.blade.php in the <header>:
+This package contains its own routes, models, controllers and views so should run out of the box. To enable the Javascript functions in the admin pages you need to add the following to your layouts/app.blade.php in the header:
 ```
 @yield('header')
 ```
-
 Once you have everything installed the route /records should take you to the list of records, where you can add or edit records. I do not have a delete function as I would never get rid of any of my records.
 
 The HTML interface will display a link to discogs and a thumbnail from discogs if you have that info in the database table. If not I wrote scripts I used to pull the info from Discogs, but due to the large numbers of variations of many vinyl releases it usually needs a bit of hand-holding to populate usable data.

@@ -24,7 +24,6 @@ class RecordsController extends Controller
 	 * Return: view containing results, to be loaded into div with Ajax
 	 **/
 	public function search(Request $request){
-		setLanguage();
 		$sort = $request->input('sort', 'label');
 		$recordSearch = new RecordSearch($request, $sort);
 		
@@ -40,7 +39,6 @@ class RecordsController extends Controller
  	 * Return: view containing results
  	 **/
     public function index(Request $request) {
-    	setLanguage();
     	$sort = $request->input('sort', 'label');
     	$page = $request->input('page', 0);
     	$recordSearch = new RecordSearch($request, $sort);
@@ -56,7 +54,6 @@ class RecordsController extends Controller
 	 *  Return: view with that record's info
 	 **/
 	public function show($id) {
-		setLanguage();
 		$record = Record::findOrFail($id);
 		$title = trans('record-lang::records.info') . ' - ' . $record->title;
 		return view('records::records.show', compact('record', 'title'));
