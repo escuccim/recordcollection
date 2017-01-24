@@ -35,7 +35,7 @@
 							<div class="col-md-4">
 								<input type="submit" name="search" id="search" value="{{ trans('record-lang::records.submit') }}" class="btn btn-primary btn-sm">
 								@if(config('records.is_user_admin')())
-										<a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@create') }}" id="add" class="btn btn-primary btn-sm">Add Record</a>
+										<a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@create') }}" id="add" class="btn btn-primary btn-sm">{{ trans('record-lang::records.addrecord') }}</a>
 								@endif
 							</div>
 						</div>

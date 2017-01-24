@@ -9,14 +9,14 @@
 <div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1>New Record</h1>
+			<h1>{{ trans('record-lang::records.addrecord') }}</h1>
 		</div>
 		<div class="panel-body">
 
 			@include('records::errors.list')
 
 			{!! Form::open(['url' => 'records', 'class' => 'form-horizontal']) !!}
-				@include('records::records.recordForm', ['submitButtonText' => 'Add Record'])
+				@include('records::records.recordForm', ['submitButtonText' => trans('record-lang::records.save')])
 			{!! Form::close() !!}
 		</div>
 	</div>

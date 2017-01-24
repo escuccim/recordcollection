@@ -1,13 +1,13 @@
 <div id="app">
 <div class="form-group">
-	{!! Form::label('artist', 'Artist:', ['class' => 'control-label col-md-1']) !!}
+	{!! Form::label('artist', trans('record-lang::records.artist') . ':', ['class' => 'control-label col-md-1']) !!}
 	<div class="col-md-10">
 		{!! Form::text('artist', null, ['class' => 'form-control', 'v-model' => 'artist']) !!}
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('Title', 'Title:', ['class' => 'control-label col-md-1']) !!}
+	{!! Form::label('Title', trans('record-lang::records.title') . ':', ['class' => 'control-label col-md-1']) !!}
 	<div class="col-md-10">
 		{!! Form::text('title', null, ['class' => 'form-control', 'v-model' => 'title']) !!}
 	</div>

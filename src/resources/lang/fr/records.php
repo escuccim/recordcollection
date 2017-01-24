@@ -14,4 +14,8 @@ return [
 	'submit' => 'Search',
 	'norecordsfound' => 'Aucun resultat trouv&eacute;!',
 	'pleasewait' => 'Attendez s\'il vous plait',
+    'editrecord' => 'Modifier Disque',
+    'addrecord' => 'Ajouter un Disque',
+    'updaterecord'  => 'Modifier Disque',
+    'save'      => 'Enregistrer',
 ];

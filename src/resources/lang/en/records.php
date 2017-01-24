@@ -14,4 +14,8 @@ return [
 	'submit' => 'Search',
 	'norecordsfound' => 'No records found!',
 	'pleasewait' => 'Please Wait',
+    'editrecord' => 'Edit Record',
+    'addrecord' => 'Add Record',
+    'updaterecord'  => 'Update Record',
+    'save'  => 'Save',
 ];

@@ -9,13 +9,13 @@
 <div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1>Edit Record</h1>
+			<h1>{{ trans('record-lang::records.editrecord') }}</h1>
 		</div>
 		<div class="panel-body">
 			@include('records::errors.list')
 
 			{!! Form::model($record, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['\Escuccim\RecordCollection\Http\Controllers\RecordsController@update', $record->id]]) !!}
-				@include('records::records.recordForm', ['submitButtonText' => 'Update Record'])
+				@include('records::records.recordForm', ['submitButtonText' => trans('record-lang::records.updaterecord')])
 			{!! Form::close() !!}
 		</div>
 	</div>
