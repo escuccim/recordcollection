@@ -39,11 +39,11 @@ class RecordCollectionServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/resources/lang' => base_path('resources/lang/vendor/escuccim')
+            __DIR__.'/resources/lang' => base_path('resources/lang/vendor/record-lang')
         ], 'lang');
 
         $this->publishes([
-            __DIR__.'/resources/views' => base_path('resources/views/vendor/escuccim')
+            __DIR__.'/resources/views' => base_path('resources/views/vendor/records')
         ], 'views');
 
         // use the default configuration file as fallback
