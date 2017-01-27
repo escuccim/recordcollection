@@ -71,17 +71,4 @@
 		allowClear: true,
 		tags: true,
 	});
-	new Vue({
-		el: '#app',
-		data: {
-			title: '',
-			artist: '',
-			label: '',
-		},
-	});
-	$('#tags').select2({
-		placeholder: 'Choose a tag:',
-		allowClear: true,
-		tags: true,
-	});
 </script>
