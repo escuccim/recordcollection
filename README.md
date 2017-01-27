@@ -27,7 +27,7 @@ php artisan migrate
 
 This uses a middleware to determine if the user is authorized to perform administrative tasks. You can use mine or create your own, the code references middleware 'admin', so unless there is a middleware with this name registered will throw errors. To use mine register it in app/Http/Kernel.php:
 ```php
-'admin' => \App\Http\Middleware\AdminMiddleware::class,
+'admin' => \Escuccim\RecordCollection\Http\Middleware\AdminMiddleware::class,
 ```
 
 If you wish to edit the files you can publish them, with:
