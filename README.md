@@ -34,8 +34,11 @@ This uses a middleware to determine if the user is authorized to perform adminis
 ```php
 'admin' => \Escuccim\RecordCollection\Http\Middleware\AdminMiddleware::class,
 ```
-
-If you wish to edit the files you can publish them, with:
+You must publish the config and pagination files with:
+```bash
+php artisan vendor:publish --tag=config
+```
+If you wish to edit the language or view files you can also publish those:
 ```bash
 php artisan vendor:publish
 ```
