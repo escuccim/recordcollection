@@ -15,3 +15,4 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Removed call to setLanguage() function on every single request, replaced with my translate middleware, much simpler
 - Removed VueJS from add and edit screens
 - Fixed bugs
+- Replaced header section in views with push to stack scripts, which makes more sense

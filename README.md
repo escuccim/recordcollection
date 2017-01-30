@@ -37,7 +37,7 @@ This uses a middleware to determine if the user is authorized to perform adminis
 To enable some Javascript features you need to add the following to the header of your layouts/app.blade.php file:
 ```php
 <script src="/js/app.js"></script>
-@yield('header')
+@stack('scripts')
 ```
 And you need to remove the script tag referencing app.js from the bottom of the layout file.
 

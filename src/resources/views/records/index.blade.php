@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('header')
+@push('scripts')
 <script src="/js/recordsearch.js"></script>
-@endsection
+@endpush
 
 @section('content')
 <div class="container">
