@@ -18,12 +18,7 @@ $ composer require escuccim/recordcollection
 Register service provider in config/app.php:
 ```php
 Escuccim\RecordCollection\RecordCollectionServiceProvider::class
-Collective\Html\HtmlServiceProvider::class,
 Laracasts\Flash\FlashServiceProvider::class,
-```
-And add the following to the aliases array:
-```php
-'Form' => Collective\Html\FormFacade::class,
 ```
 Run migrations to create the database table:
 ```bash

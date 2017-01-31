@@ -14,10 +14,9 @@
 		<div class="panel-body">
 
 			@include('records::errors.list')
-
-			{!! Form::open(['url' => 'records', 'class' => 'form-horizontal']) !!}
+			<form action="/records" class="form-horizontal" method="post">
 				@include('records::records.recordForm', ['submitButtonText' => trans('record-lang::records.save')])
-			{!! Form::close() !!}
+			</form>
 		</div>
 	</div>
 </div>

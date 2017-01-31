@@ -1,43 +1,47 @@
 <div id="app">
 <div class="form-group">
-	{!! Form::label('artist', trans('record-lang::records.artist') . ':', ['class' => 'control-label col-md-1']) !!}
+	<label for="artist" class="control-label col-md-1">{!! trans('record-lang::records.artist') !!}:</label>
 	<div class="col-md-10">
-		{!! Form::text('artist', null, ['class' => 'form-control', 'v-model' => 'artist']) !!}
+		<input class="form-control" v-model="artist" name="artist" type="text" id="artist" value="{{$record->artist}}">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('Title', trans('record-lang::records.title') . ':', ['class' => 'control-label col-md-1']) !!}
+	<label for="title" class="control-label col-md-1">{!! trans('record-lang::records.title') !!}:</label>
 	<div class="col-md-10">
-		{!! Form::text('title', null, ['class' => 'form-control', 'v-model' => 'title']) !!}
+		<input class="form-control" v-model="title" name="title" type="text" value="{{$record->title}}">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('Label', 'Label:', ['class' => 'control-label col-md-1']) !!}
+	<label for="label" class="control-label col-md-1">Label:</label>
 	<div class="col-md-10">
-		{!! Form::select('label', [null => null] + $labels, $record->label, ['id' => 'label', 'class' => 'form-control', 'v-model' => 'label']) !!}
+		<select id="label" class="form-control" v-model="label" name="label"><option value=""></option>
+			@foreach($labels as $label)
+				<option value="{{$label}}" {{ $label== $record->label ? 'selected="selected"' : '' }}>{{ $label }}</option>
+			@endforeach
+		</select>
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('Catalog_No', 'Cat #:', ['class' => 'control-label col-md-1']) !!}
+	<label for="catalog_no" class="control-label col-md-1">Cat #:</label>
 	<div class="col-md-10">
-		{!! Form::text('catalog_no', null, ['class' => 'form-control']) !!}
+		<input class="form-control" name="catalog_no" type="text" value="{{$record->catalog_no}}">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('Style', 'Style:', ['class' => 'control-label col-md-1']) !!}
+	<label for="style" class="control-label col-md-1">Style:</label>
 	<div class="col-md-10">
-		{!! Form::text('style', null, ['class' => 'form-control']) !!}
+		<input class="form-control" name="style" type="text" value="{{$record->style}}">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('discogs', 'Discogs:', ['class' => 'control-label col-md-1']) !!}
+	<label for="discogs" class="control-label col-md-1">Discogs:</label>
 	<div class="col-md-9">
-		{!! Form::text('discogs', null, ['class' => 'form-control']) !!}
+		<input class="form-control" name="discogs" type="text" value="{{$record->discogs}}">
 	</div>
 	<div class="col-md-2">
 		@if($record->discogs)
@@ -47,9 +51,9 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('thumb', 'Thumb:', ['class' => 'control-label col-md-1']) !!}
+	<label for="thumb" class="control-label col-md-1">Thumb:</label>
 	<div class="col-md-9">
-		{!! Form::text('thumb', null, ['class' => 'form-control']) !!}
+		<input class="form-control" name="thumb" type="text" id="thumb" value="{{$record->thumb}}">
 	</div>
 	<div class="col-md-2">
 		@if($record->thumb)	

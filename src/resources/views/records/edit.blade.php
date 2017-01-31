@@ -13,10 +13,11 @@
 		</div>
 		<div class="panel-body">
 			@include('records::errors.list')
-
-			{!! Form::model($record, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['\Escuccim\RecordCollection\Http\Controllers\RecordsController@update', $record->id]]) !!}
+			<form method="POST" action="http://skooch.app/records/{{ $record->id }}" accept-charset="UTF-8" class="form-horizontal">
+				{{ csrf_field() }}
+				<input name="_method" type="hidden" value="PATCH">
 				@include('records::records.recordForm', ['submitButtonText' => trans('record-lang::records.updaterecord')])
-			{!! Form::close() !!}
+			</form>
 		</div>
 	</div>
 </div>
