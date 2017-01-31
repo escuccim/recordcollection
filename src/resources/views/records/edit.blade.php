@@ -13,7 +13,7 @@
 		</div>
 		<div class="panel-body">
 			@include('records::errors.list')
-			<form method="POST" action="http://skooch.app/records/{{ $record->id }}" accept-charset="UTF-8" class="form-horizontal">
+			<form method="POST" action="/records/{{ $record->id }}" accept-charset="UTF-8" class="form-horizontal">
 				{{ csrf_field() }}
 				<input name="_method" type="hidden" value="PATCH">
 				@include('records::records.recordForm', ['submitButtonText' => trans('record-lang::records.updaterecord')])
