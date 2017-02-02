@@ -18,25 +18,26 @@ class RecordsTest extends BrowserKitTest
 
     public function testSearch(){
         // put some data in the DB so we have something to test
-        $data = $this->addSampleData(10);
+        $data = $this->addSampleData(30);
 
         // get a random record and hope it doesn't match more things than are displayed on the page
         $record = Record::inRandomOrder()->first();
 
-        // test search  by artist and title
+        // test search  by artist
         $this->visit('/records')
             ->type($record->artist, 'searchTerm')
             ->press('Search')
             ->see($record->title)
             ->see($record->label);
 
+        // search by title
         $this->visit('/records')
             ->type($record->title, 'searchTerm')
             ->press('Search')
             ->see($record->artist)
             ->see($record->label);
 
-        // test search by catalog number
+        // search by catalog number, make sure our record has a cat no
         $record = Record::whereNotNull('catalog_no')->where('catalog_no', '!=', '')->inRandomOrder()->first();
 
         $this->visit('/records')
@@ -47,40 +48,40 @@ class RecordsTest extends BrowserKitTest
             ->see($record->title)
             ->see($record->label);
 
-        // Test search, plus reorder of results - don't feel like writing code to get a label that has
-        // more records than are displayed on the page, so I'm leaving this hard coded for now
-
-        // get labels that have more results than will fit on one page
+        // get labels that have more results than will fit on one page, if there aren't any skip this part
         $labels = DB::select('select label FROM ' . config('records.table_name') . ' GROUP By label HAVING Count(label) > 23');
-        // pick one at random
-        $count = count($labels);
-        $rand = rand(0, $count - 1);
-        $label = $labels[$rand];
 
-        // get first record for this label
-        $firstRecord = Record::where('label', $label->label)->orderBy('artist', 'asc')->orderBy('title', 'asc')->first();
-        $lastRecord = Record::where('label', $label->label)->orderBy('artist', 'desc')->orderBy('title', 'desc')->first();
+        if(count($labels)) {
+            // pick one at random
+            $count = count($labels);
+            $rand = rand(0, $count - 1);
+            $label = $labels[$rand];
 
-        $this->visit('/records/search?searchTerm=' . $label->label . '&searchBy=label')
-            ->see($firstRecord->artist)
-            ->see($firstRecord->title)
-            ->dontSee($lastRecord->title);
+            // get first record for this label
+            $firstRecord = Record::where('label', $label->label)->orderBy('artist', 'asc')->orderBy('title', 'asc')->first();
+            $lastRecord = Record::where('label', $label->label)->orderBy('artist', 'desc')->orderBy('title', 'desc')->first();
 
-        // change the sort
-        $firstRecord = Record::where('label', $label->label)->orderBy('catalog_no', 'asc')->orderBy('artist', 'asc')->orderBy('title', 'asc')->first();
-        $lastRecord = Record::where('label', $label->label)->orderBy('catalog_no', 'desc')->orderBy('artist', 'desc')->orderBy('title', 'desc')->first();
+            $this->visit('/records/search?searchTerm=' . $label->label . '&searchBy=label')
+                ->see($firstRecord->artist)
+                ->see($firstRecord->title)
+                ->dontSee($lastRecord->title);
 
-        $this->visit('/records/search?searchTerm=' . $label->label . '&searchBy=label&sort=catalog_no')
-            ->see($firstRecord->artist)
-            ->see($firstRecord->title)
-            ->see($firstRecord->catalog_no)
-            ->dontSee($lastRecord->title);
+            // change the sort
+            $firstRecord = Record::where('label', $label->label)->orderBy('catalog_no', 'asc')->orderBy('artist', 'asc')->orderBy('title', 'asc')->first();
+            $lastRecord = Record::where('label', $label->label)->orderBy('catalog_no', 'desc')->orderBy('artist', 'desc')->orderBy('title', 'desc')->first();
+
+            $this->visit('/records/search?searchTerm=' . $label->label . '&searchBy=label&sort=catalog_no')
+                ->see($firstRecord->artist)
+                ->see($firstRecord->title)
+                ->see($firstRecord->catalog_no)
+                ->dontSee($lastRecord->title);
+        }
     }
 
 
     public function testRecordPaginationAndSort(){
         // put some data in the DB so we have something to test
-        $data = $this->addSampleData(50);
+        $data = $this->addSampleData(60);
 
         // test pagination - get number of pages
         $resultsPerPage = 23;
@@ -237,7 +238,7 @@ class RecordsTest extends BrowserKitTest
 
     public function testAddRecord(){
         // put some data in the DB so we have something to test
-        $data = $this->addSampleData(10);
+        $data = $this->addSampleData(1);
 
         $admin = factory(App\User::class)->create();
         $admin->type = 1;
@@ -263,8 +264,12 @@ class RecordsTest extends BrowserKitTest
     public function testAPI(){
         // put some data in the DB so we have something to test
         $data = $this->addSampleData(20);
-        
-        $token = 'SKOOCH_API';
+        $admin = factory(App\User::class)->create();
+        $admin->type = 1;
+        $token = $admin->api_token = 'TEST_TOKEN_123';
+        $admin->save();
+
+//        $token = 'TEST_TOKEN_123';
 
         // make sure it doesn't work without a token
         $this->visit('/api/records')
@@ -345,10 +350,8 @@ class RecordsTest extends BrowserKitTest
             $record->label = $label;
             $record->catalog_no = $cat_no;
             $record->save();
-
-            $returnArray[] = $record;
         }
 
-        return $returnArray;
+        return null;
     }
 }
