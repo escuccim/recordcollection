@@ -15,6 +15,7 @@
 
 			@include('records::errors.list')
 			<form action="/records" class="form-horizontal" method="post">
+				{{ csrf_field() }}
 				@include('records::records.recordForm', ['submitButtonText' => trans('record-lang::records.save')])
 			</form>
 		</div>

@@ -125,8 +125,8 @@ class RecordsController extends Controller
 		return redirect('records');
 	}
 	
-	public function destroy() {
-		// 	we should have no reason to delete records
+	public function destroy($id) {
+		Record::destroy($id);
 		return redirect('records');
 	}
 	

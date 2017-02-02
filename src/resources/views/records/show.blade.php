@@ -49,8 +49,13 @@
 
 					@if(config('records.is_user_admin')())
 						<div class="row">
-							<div class="col-md-2 col-md-offset-5">
+							<div class="col-md-4 col-md-offset-4">
+								<form action="/records/{{$record->id}}" method="POST" onSubmit="return confirm('Are you sure you want to delete this?');">
 								<br><a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@edit', [$record->id]) }}" class="btn btn-primary">Edit Record</a>
+									{{ csrf_field() }}
+									<input type="hidden" name="_method" value="DELETE">
+									<button class="btn btn-default">Delete</button>
+								</form>
 							</div>
 						</div>
 					@endif

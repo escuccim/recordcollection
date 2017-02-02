@@ -7,9 +7,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Unreleased
 ### Added
 - Removed references to Laravel's form function to reduce dependencies
+- Added ability to delete records
 
 ### Fixed
 - Updated tests
+- Fixed bug related to change in forms
 
 ## v0.0.2-beta.2 [2017-01-27]
 
