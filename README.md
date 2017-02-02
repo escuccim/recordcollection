@@ -65,12 +65,6 @@ The HTML interface will display a link to discogs and a thumbnail from discogs i
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Testing
-
-``` bash
-$ composer test
-```
-
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
