@@ -76,7 +76,6 @@ If you discover any security related issues, please email skooch@gmail.com inste
 ## Credits
 
 - [Eric Scuccimarra][link-author]
-- [All Contributors][link-contributors]
 
 ## License
 
