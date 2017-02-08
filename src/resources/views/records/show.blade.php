@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('header')
+	@include('records::records.richCard')
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
