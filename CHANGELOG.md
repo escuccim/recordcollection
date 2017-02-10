@@ -8,6 +8,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Added
 - Removed references to Laravel's form function to reduce dependencies
 - Added ability to delete records
+- Added rich card for record
 
 ### Fixed
 - Updated tests

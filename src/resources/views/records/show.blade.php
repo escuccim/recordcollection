@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('header')
-	@include('records::records.richCard')
+	@if(config('records.use_rich_card'))
+		@include('records::records.richCard')
+	@endif
 @endsection
 
 @section('content')
