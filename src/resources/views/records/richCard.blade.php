@@ -18,7 +18,10 @@
         "@type": "Organization",
         "name": "{{ $record->label }}"
     },
-    "catalogNumber": "{{ $record->catalog_no }}",
-    "image": "{{$record->thumb}}"
+    @if($record->thumb)
+        "image": "{{$record->thumb}}",
+    @endif
+    "catalogNumber": "{{ $record->catalog_no }}"
+
 }
 </script>

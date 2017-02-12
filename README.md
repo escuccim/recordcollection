@@ -61,6 +61,8 @@ Once you have everything installed the route /records should take you to the lis
 
 The HTML interface will display a link to discogs and a thumbnail from discogs if you have that info in the database table. If not I wrote scripts I used to pull the info from Discogs, but due to the large numbers of variations of many vinyl releases it usually needs a bit of hand-holding to populate usable data.
 
+In the records.php config file is a key called 'use_rich_cards'. This allows you to display a Rich Card with the record information. The thumbnail from the record will be used as an image if this is on.
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
