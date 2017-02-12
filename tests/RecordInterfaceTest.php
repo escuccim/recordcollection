@@ -18,6 +18,7 @@ class RecordInterfaceTest extends BrowserKitTest
         // test search  by artist
         $this->visit('/records')
             ->type($record->artist, 'searchTerm')
+            ->select('artist', 'searchBy')
             ->press('Search')
             ->see($record->title)
             ->see($record->label);
@@ -25,6 +26,7 @@ class RecordInterfaceTest extends BrowserKitTest
         // search by title
         $this->visit('/records')
             ->type($record->title, 'searchTerm')
+            ->select('title', 'searchBy')
             ->press('Search')
             ->see($record->artist)
             ->see($record->label);
@@ -131,8 +133,8 @@ class RecordInterfaceTest extends BrowserKitTest
 
 
         // do a search that should have results by label
-        $label = Record::select('label')->distinct()->inRandomOrder()->first();
-        $records = Record::where('label', $label->label)->get();
+        $label = Record::select('label')->where('artist', 'NOT LIKE', '%&%')->where('title', 'NOT LIKE', '%&%')->distinct()->inRandomOrder()->first();
+        $records = Record::where('label', $label->label)->where('artist', 'NOT LIKE', '%&%')->where('title', 'NOT LIKE', '%&%')->get();
 
         // check to see that the items listed on the page match the results in the DB
         $this->visit('/api/records?api_token=' . $token . '&searchTerm=' . $label->label)
@@ -149,7 +151,7 @@ class RecordInterfaceTest extends BrowserKitTest
 
         // do a search that should have results by artist
         $artist = Record::select('artist')->where('artist', 'NOT LIKE', '%&%')->distinct()->inRandomOrder()->first();
-        $records = Record::where('artist', $artist->artist)->get();
+        $records = Record::where('artist', $artist->artist)->where('artist', 'NOT LIKE', '%&%')->where('title', 'NOT LIKE', '%&%')->get();
 
         // check to see that the items listed on the page match the results in the DB
         $this->visit('/api/records?api_token=' . $token . '&searchTerm=' . $artist->artist)
