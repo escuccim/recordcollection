@@ -18,4 +18,5 @@ return [
     'addrecord' => 'Add Record',
     'updaterecord'  => 'Update Record',
     'save'  => 'Save',
+    'notfound'  => 'This record does not exist in the database.',
 ];

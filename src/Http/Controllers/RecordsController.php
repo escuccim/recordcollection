@@ -54,7 +54,10 @@ class RecordsController extends Controller
 	 *  Return: view with that record's info
 	 **/
 	public function show($id) {
-		$record = Record::findOrFail($id);
+		$record = Record::find($id);
+		if(!$record){
+            return view('records::records.error');
+        }
 		$title = trans('record-lang::records.info') . ' - ' . $record->title;
 		return view('records::records.show', compact('record', 'title'));
 	}

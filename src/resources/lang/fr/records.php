@@ -18,4 +18,5 @@ return [
     'addrecord' => 'Ajouter un Disque',
     'updaterecord'  => 'Modifier Disque',
     'save'      => 'Enregistrer',
+    'notfound'  => 'Cet disque n\'existe pas dans la base de données',
 ];
