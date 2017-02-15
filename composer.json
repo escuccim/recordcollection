@@ -3,6 +3,7 @@
     "type": "library",
     "description": "A package to maintain a searchable database of vinyl records",
     "keywords": [
+        "laravel",
         "escuccim",
         "vinyl",
         "discogs",
