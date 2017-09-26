@@ -53,7 +53,7 @@ class RecordsController extends Controller
 	 *  Input: id of record to show
 	 *  Return: view with that record's info
 	 **/
-	public function show($id) {
+	public function show($id, $slug = null) {
 		$record = Record::find($id);
 		if(!$record){
             return view('records::records.error');

@@ -31,7 +31,7 @@
 					<tr>
 						<td></td>
 						<td>{{ $record->artist }}</td>
-						<td><a href="{{ action('\Escuccim\RecordCollection\Http\Controllers\RecordsController@show', [$record->id]) }}" title="See detailed info about this record">{{ $record->title }}</a></td>
+						<td><a href="{{ route('record.show.slug', ['id' => $record->id, 'slug' => str_slug($record->title)]) }}" title="See detailed info about this record">{{ $record->title }}</a></td>
 						<td>{{ $record->label }}</td>
 						<td>{{ $record->catalog_no }}</td>
 					</tr>
