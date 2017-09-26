@@ -4,7 +4,7 @@ All Notable changes to `RecordCollection` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## Unreleased
+## v0.1.0-beta.1 [2017-02-18]
 ### Added
 - Removed references to Laravel's form function to reduce dependencies
 - Added ability to delete records
